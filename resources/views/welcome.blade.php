@@ -10,33 +10,14 @@
           <title>千葉拓海のポートフォリオ</title>
           <!-- Bootstrap -->
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-          <style>
-              body {
-                padding: 50px;
-                background-color: #95C1FF;
-                color: #000000;
-                margin: 0px;
-              }
-
-              p {
-                font-weight: bold;
-                font-size: 100%;
-                font-family: serif;
-
-              }
-
-              .starter-template {
-                padding: 40px 15px;
-                background-color: white;
-              }
-
-          </style>
+          @include('style')
       </head>
 
       <body>
         <!--ナビゲーションバー部分-->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top transparent" id="nav1">
         		<div class="container">
         			<div class="navbar-header">
         				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -52,116 +33,148 @@
         				<ul class="nav navbar-nav">
         					<li class="active"><a href="#">Home</a></li>
                   <li><a href="#app">成果物</a></li>
-                  <li><a href="#list">Link</a></li>
                   <li><a href="#form">Form</a></li>
+                  <li><a href="#list">Link</a></li>
         				</ul>
                 <!--リスト部分終わり-->
         			</div>
         		</div>
         	</nav>
           <!--ナビゲーションバー部分終わり-->
+
+          <!--TOP画像-->
+          <p class='lead'>Takumi Chiba's Portfolio<br><?= date("Y/m/d G:i:s") ?></p>
+          <div id="photo">
+            <img class="img-responsive center-block" src="{{ asset('/assets/images/test2.1.jpg') }}">
+            <img class="img-responsive center-block" src="{{ asset('/assets/images/test5.jpg') }}">
+            <img class="img-responsive center-block" src="{{ asset('/assets/images/test3.1.jpg') }}">
+            <img class="img-responsive center-block" src="{{ asset('/assets/images/test4.jpg') }}">
+          </div>
           <div class="container">
+
+
+          <!--TOP画像終わり-->
+
+          <!--starterスタート-->
               <div class="starter-template">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="jumbotron">
-                                <h1>ポートフォリオ</h1>
-                                <p class='lead'>Takumi Chiba's Portfolio　　<?= date('Y/m/d H:i:s') ?></p>
-                                <a href="https://twitter.com/mwambawb/status/999562703688556544" target="_blank">
-                                <img class="img-responsive center-block" src="{{ asset('/assets/images/test.jfif') }}"></a>
-                                <p>（仮）ポートフォリオのメインページ<br>自己紹介とか書きます</p>
+                                <h7>
+                                   はじめまして,千葉拓海です<br>ポートフォリオをご覧いただきありがとうございます<br>
+                                   PHPで在庫管理とランチマップのアプリを作成しました<br>
+                                   また、ポートフォリオの感想を送ることのできる<br>
+                                   フォームも用意してあります<br>
+                                   送っていただけると嬉しいです！！！
+                                </h7>
+                <hr>
+          <!--アプリ群-->
+                      <h2 id="app"><span>アプリ</span></h2>
+                      <div class="row" style="margin-bottom:60px">
 
+                              <div class="col-sm-1">
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="box29">
+                                  <a href="{{ route('shop.list') }}">
+                                  <div class="img_wrap" >
+                                      <img src="http://flat-icon-design.com/f/f_health_39/s512_f_health_39_1bg.png">
+                                  </div>
+                                  <div class="box-title">
+                                      ランチマップアプリ<br>
+                                      ---LunchmapAPP---
+                                  </div>
+                                  </a>
+                                </div>
+                                <p>
+                                  Paiza ラーニングでの勉強をもとに作成した<br>
+                                  ランチマップアプリケーションです。<br>
+                                  ランチマップとしての基本的な閲覧機能に加えて、<br>
+                                  ログイン時のみ記事の投稿、編集、削除が可能などの<br>
+                                  機能を備えています<br>
+                                  <br>
+                                  PHP,Laravel,PHP MyAdmin　を使用<br>
+                                </p>
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="box29">
+                                  <a href="http://192.168.0.106:8001/">
+                                  <div class="img_wrap" >
+                                      <img src="http://flat-icon-design.com/f/f_business_88/s512_f_business_88_1bg.png">
+                                  </div>
+                                  <div class="box-title">
+                                      在庫管理アプリ<br>
+                                      ---InventoryAPP---
+                                  </div>
+                                  </a>
+                                </div>
+                                <p>
+                                  在庫管理のアプリです。<br>
+                                  paizaラーニングを応用して作成しました。<br>
+                                  ログインした場合のみ詳細ページを閲覧できます。<br>
+                                  <br>
+                                  PHP,Laravel,PHP MyAdmin　を使用<br>
+                                </p>
+                              </div>
+                              <div class="col-sm-1">
+                              </div>
+                      </div>
+                      <!--1列目終わり-->
+                    <div class="row" style="margin-bottom:60px">
+                            <div class="col-sm-1">
                             </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                      <h2 id="app"></h2>
-                            <div class="col-sm-6">
-                                <h2>ランチマップアプリ</h2>
+                            <div class="col-sm-5">
+                              <div class="box29">
                                 <a href="{{ route('shop.list') }}">
-                                <img class="img-responsive center-block" src="http://flat-icon-design.com/f/f_health_39/s512_f_health_39_1bg.png"></a>
-                                <p>
-                                  Paiza ラーニングで作成したランチマップアプリケーションです。<br>
-                                  ランチマップとしての基本的な閲覧機能に加えて、
-                                  ログイン時のみ記事の投稿、編集、削除が可能などの機能を備えています
-                                </p>
+                                <div class="img_wrap" >
+                                    <img src="http://flat-icon-design.com/f/f_event_93/s512_f_event_93_1bg.png">
+                                </div>
+                                <div class="box-title">
+                                    ゲームアプリ<br>
+                                    ---GAMEAPP---
+                                </div>
+                                </a>
+                              </div>
+                              <p>
+                                今春リリース予定！！<br>
+                                こうご期待
+                              </p>
                             </div>
-                            <div class="col-sm-6">
-                                <h2>在庫管理アプリ</h2>
-                                <a href="http://192.168.0.104:8001/articles">
-                                <img class="img-responsive center-block" src="http://flat-icon-design.com/f/f_business_88/s512_f_business_88_1bg.png"></a>
-                                <p>
-                                  在庫管理のアプリです。今後作ります。<br>
-                                  ログインした場合のみ詳細ページを閲覧できるようにします。<br>
-                                  商品の登録、削除、編集を行えるようにします。<br>
-                                </p>
+                            <div class="col-sm-5">
+                              <div class="box29">
+                                <a href="{{ route('shop.list') }}">
+                                <div class="img_wrap" >
+                                    <img src="http://flat-icon-design.com/f/f_object_74/s256_f_object_74_0bg.png">
+                                </div>
+                                <div class="box-title">
+                                    ショッピングアプリ<br>
+                                    ---ShoppingAPP---
+                                </div>
+                                </a>
+                              </div>
+                              <p>
+                                今夏リリース予定！！<br>
+                                こうご期待
+                              </p>
                             </div>
-
+                            <div class="col-sm-1">
+                            </div>
                     </div>
+
+                    <!--アプリ群終わり-->
+                    <hr>
+                    @guest
+                    @include('form')
+                    @endguest
                     <hr>
                     <h2 id="list">↓いろんなリンク先↓</h2>
-                    <a class="btn btn-primary" href="https://twitter.com/mwambawb" target="_blank">Twitter</a>
-                    <a class="btn btn-primary" href="https://twitter.com/mwambawb" target="_blank">Gmail</a>
-                    <a class="btn btn-primary" href="https://twitter.com/mwambawb" target="_blank">YouTube</a>
+                    <a href="https://twitter.com/mwambawb"><img src="{{ asset('/assets/images/twitter.png') }}" alt="サンプル"></a>
+                    <a href="mailto:mwambawbaw@gmail.com"><img src="{{ asset('/assets/images/mail.png') }}" alt="サンプル"></a>
+                    <a href="https://twitter.com/mwambawb"><img src="{{ asset('/assets/images/youtube.jpg') }}" alt="サンプル"></a>
                     <a class="btn btn-primary" href="https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3" target="_blank">夏目漱石</a>
-                    <hr>
-                    @include('form')
-                    <hr>
-                    <a class="btn btn-primary" href="#">ページ先頭に戻る</a>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <h2>リスト</h2>
-                    <ul class="list-group">
-                      <li class="list-group-item">ねこ</li>
-                      <li class="list-group-item">いぬ</li>
-                      <li class="list-group-item">うさぎ</li>
-                    </ul>
-                    <hr>
-                    <h2 id="table">テーブル</h2>
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>id</th>
-                          <th>名前</th>
-                          <th>特徴</th>
-                          <th>住所</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>たま</td>
-                          <td>くつした</td>
-                          <td>東京都港区</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>みけ</td>
-                          <td>とらじま</td>
-                          <td>東京都台東区</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <h3></h3>
+
                     <a class="btn btn-primary" href="#">ページ先頭に戻る</a>
                 </div>
               </div>
+
 
 
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

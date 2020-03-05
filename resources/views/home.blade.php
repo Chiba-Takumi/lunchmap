@@ -17,6 +17,7 @@
 
                     You are logged in!
                 </div>
+                <a class="btn btn-primary" href="/shops">Topページへ</a>
             </div>
         </div>
     </div>

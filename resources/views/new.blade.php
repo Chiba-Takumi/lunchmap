@@ -2,6 +2,7 @@
 @extends('layout')
 
 @section('content')
+    <div class="jumbotron bg-white">
     <h1>新しいお店</h1>
     {{ Form::open(['route' => 'shop.store']) }}
         <div class='form-group'>
@@ -24,5 +25,6 @@
     <div>
         <a href={{ route('shop.list') }}>一覧に戻る</a>
     </div>
+  </div>
 
 @endsection

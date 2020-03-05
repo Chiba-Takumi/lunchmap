@@ -2,11 +2,13 @@
 @extends('layout')
 
 @section('content')
+  <div class="jumbotron bg-white">
     <h1>{{ $shop->name }}</h1>
     <div>
-        <p>{{ $shop->category->name }}</p>
-        <p>{{ $shop->address }}</p>
+        <p>カテゴリー： {{ $shop->category->name }}</p>
+        <p>住所： {{ $shop->address }}</p>
     </div>
+  </div>
 
     <iframe id='map'
         src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDUn6P4Bydi-2eDZlZQNPFEYotaO1G2K6g&amp;q={{ $shop->address }}'
@@ -16,7 +18,7 @@
     </iframe>
 
     <div>
-        <a href={{ route('shop.list' )}}>一覧に戻る</a>
+        <a class="btn btn-primary" href={{ route('shop.list')}}>一覧に戻る</a>
         @auth
             <!--詳細情報のuseridとloginしているuseridが等しかった時ボタンを表示する-->
             @if ($shop->user_id === $login_user_id)

@@ -14,7 +14,7 @@ class ShopController extends Controller
     #exceptは除外されるため[index,show,docs]はログインしなくても実行できる
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show', 'to_docs']);
+        $this->middleware('auth')->except(['index', 'show', 'to_docs', 'store_form']);
     }
 
     public function index()
